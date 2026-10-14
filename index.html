@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="1:1 Kundalini Yoga classes at home in Gurgaon with Apeksha Raina, Yoga Alliance certified teacher and Pranic Healer.">
+<title>Kundalini with Apeksha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mukta:wght@300;400;600&display=swap">
+<style>
+/* Layout: a compact two-column page; hero pairs the promise with the teacher, then two paired bands. Dusk-lit dark first, daylight variant. */
+:root {
+  --bg: #1b1418;
+  --surface: #261c22;
+  --fg: #f1e7de;
+  --muted: #b9a89d;
+  --line: #3d2f36;
+  --saffron: #e8a04a;
+  --sage: #9db394;
+  --on-accent: #22160c;
+  --display: "Marcellus", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --body: "Mukta", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f5efe8; --surface: #ece3da; --fg: #2a1c22; --muted: #6e5a52; --line: #dacbbd;
+    --saffron: #b8661a; --sage: #4f6b49; --on-accent: #fff8f0; color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f5efe8; --surface: #ece3da; --fg: #2a1c22; --muted: #6e5a52; --line: #dacbbd;
+  --saffron: #b8661a; --sage: #4f6b49; --on-accent: #fff8f0; color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 1rem; line-height: 1.55; font-weight: 300; }
+.wrap { max-width: 62rem; margin: 0 auto; padding-inline: 1.25rem; padding-block: 0 1.5rem; }
+h1, h2 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; line-height: 1.15; }
+h2 { font-size: 1.45rem; }
+p { margin: 0; }
+a { color: inherit; }
+.eyebrow { font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); font-weight: 600; }
+.btn { display: inline-flex; align-items: center; padding: 0.65rem 1.15rem; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 0.95rem; border: 1px solid transparent; }
+.btn-primary { background: var(--saffron); color: var(--on-accent); }
+.btn-ghost { border-color: var(--line); color: var(--fg); }
+.btn:hover { filter: brightness(1.06); }
+.btn:focus-visible { outline: 2px solid var(--saffron); outline-offset: 3px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.band { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; padding-block: 1.75rem; border-top: 1px solid var(--line); }
+.block { display: grid; gap: 0.7rem; align-content: start; min-width: 0; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 2rem; align-items: center; padding-block: 2.25rem 1.75rem; }
+.hero-text { display: grid; gap: 0.85rem; min-width: 0; position: relative; padding-left: 1.6rem; }
+.spine { position: absolute; left: 0; top: 0.3rem; bottom: 0.3rem; display: flex; flex-direction: column; justify-content: space-between; align-items: center; width: 0.6rem; }
+.spine::before { content: ""; position: absolute; top: 0; bottom: 0; width: 1px; background: linear-gradient(var(--line), var(--saffron), var(--line)); }
+.spine span { width: 0.55rem; height: 0.55rem; border-radius: 50%; position: relative; box-shadow: 0 0 0 3px var(--bg); }
+.hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.2rem); }
+.hero h1 em { font-style: normal; color: var(--saffron); }
+.lede { color: var(--muted); font-size: 1.05rem; max-width: 46ch; }
+.where { font-size: 0.88rem; color: var(--muted); }
+.teacher { display: grid; justify-items: center; text-align: center; gap: 0.6rem; }
+.teacher img { width: 100%; max-width: 13rem; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 30%; border-radius: 50%; border: 2px solid var(--saffron); padding: 5px; background: var(--bg); display: block; }
+.teacher .name { font-family: var(--display); font-size: 1.35rem; }
+.teacher .bio { font-size: 0.92rem; color: var(--muted); max-width: 30ch; }
+.creds { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; }
+.creds li { font-size: 0.8rem; padding: 0.1rem 0.65rem; border-radius: 999px; border: 1px solid var(--line); }
+
+/* Class flow */
+.flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; counter-reset: step; }
+.flow li { display: grid; grid-template-columns: 1.6rem 1fr; gap: 0.6rem; align-items: baseline; counter-increment: step; }
+.flow li::before { content: counter(step); font-family: var(--display); color: var(--saffron); font-size: 1.1rem; }
+.flow b { font-weight: 600; }
+.flow span { color: var(--muted); font-size: 0.92rem; }
+
+/* Prices */
+.prices { display: grid; gap: 0; }
+.price { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: 0.5rem; border-bottom: 1px dashed var(--line); font-variant-numeric: tabular-nums; }
+.price .n { font-family: var(--display); font-size: 1.05rem; }
+.price .amt { font-weight: 600; font-size: 1.1rem; }
+.price .per { color: var(--muted); font-size: 0.85rem; font-weight: 300; margin-left: 0.4rem; }
+.gift { color: var(--sage); font-size: 0.92rem; }
+
+/* Free mantra */
+.mantra { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.25rem; display: grid; gap: 0.7rem; align-content: start; }
+.keyword { font-family: var(--display); font-size: 1.35rem; color: var(--saffron); letter-spacing: 0.12em; }
+.small { font-size: 0.92rem; color: var(--muted); }
+footer { border-top: 1px solid var(--line); padding-block: 1.25rem 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; font-size: 0.85rem; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .hero { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 1.75rem 1.5rem; }
+  .teacher { grid-template-columns: auto 1fr; justify-items: start; text-align: left; align-items: center; column-gap: 1rem; }
+  .teacher img { max-width: 6.5rem; grid-row: span 3; }
+  .creds { justify-content: flex-start; grid-column: 1 / -1; }
+  .band { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 1.5rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .spine span { animation: glow 6s ease-in-out infinite; }
+  .spine span:nth-child(2) { animation-delay: .8s } .spine span:nth-child(3) { animation-delay: 1.6s }
+  .spine span:nth-child(4) { animation-delay: 2.4s } .spine span:nth-child(5) { animation-delay: 3.2s }
+  .spine span:nth-child(6) { animation-delay: 4s } .spine span:nth-child(7) { animation-delay: 4.8s }
+  @keyframes glow { 0%, 100% { opacity: .75 } 50% { opacity: 1; transform: scale(1.25) } }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-text">
+      <div class="spine" aria-hidden="true">
+        <span style="background:#9b6ad6"></span>
+        <span style="background:#5b7fe0"></span>
+        <span style="background:#4fb0c6"></span>
+        <span style="background:#5fae6a"></span>
+        <span style="background:#e3c34a"></span>
+        <span style="background:#e8873a"></span>
+        <span style="background:#d4544a"></span>
+      </div>
+      <p class="eyebrow">Kundalini Yoga · 1:1 classes</p>
+      <h1>Awaken the <em>Shakti</em> within you</h1>
+      <p class="lede">Kundalini Yoga blends movement, breath, meditation and chanting to awaken your inner energy and bring balance and transformation.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="https://ig.me/m/rainaaapeksha" target="_blank" rel="noopener">Book a class on Instagram</a>
+        <a class="btn btn-ghost" href="#mantra">Free mantra meditation</a>
+      </div>
+      <p class="where">Classes at your home in Gurgaon</p>
+    </div>
+    <div class="teacher">
+      <img src="apeksha.jpg" alt="Apeksha Raina, Kundalini Yoga teacher" width="600" height="750">
+      <p class="name">Hi, I'm Apeksha</p>
+      <p class="bio">My first yoga retreat in Rishikesh was an excuse for a solo trip. It became the reason I teach.</p>
+      <ul class="creds">
+        <li>Yoga Alliance certified</li>
+        <li>World Peace Yoga School, Rishikesh</li>
+        <li>Certified Pranic Healer</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="band">
+    <section class="block" id="about">
+      <p class="eyebrow">What is Kundalini</p>
+      <h2>Yoga for your energy, not just your body</h2>
+      <p>In yogic tradition, Kundalini is the energy that rests at the base of the spine. Kundalini Yoga works with it through kriyas: set sequences of posture, breath, mantra and stillness, to help you feel calmer, more focused and more connected to yourself. No flexibility or experience needed.</p>
+    </section>
+    <section class="block" id="class">
+      <p class="eyebrow">What happens in a class</p>
+      <ol class="flow">
+        <li><div><b>Centering</b> <span>Set your intention</span></div></li>
+        <li><div><b>Kriya</b> <span>Move and breathe</span></div></li>
+        <li><div><b>Meditation</b> <span>Still the mind</span></div></li>
+        <li><div><b>Mantra</b> <span>Elevate your energy</span></div></li>
+        <li><div><b>Relaxation</b> <span>Rest and integrate</span></div></li>
+      </ol>
+    </section>
+  </div>
+
+  <div class="band">
+    <section class="block" id="prices">
+      <p class="eyebrow">One on one sessions</p>
+      <div class="prices">
+        <div class="price"><span class="n">1 class</span><span class="amt">₹2,500</span></div>
+        <div class="price"><span class="n">7 classes</span><span class="amt">₹14,000<span class="per">₹2,000 each</span></span></div>
+        <div class="price"><span class="n">21 classes</span><span class="amt">₹35,000<span class="per">₹1,667 each</span></span></div>
+      </div>
+      <p class="gift">✦ One free Pranic Healing session included</p>
+      <div class="ctas"><a class="btn btn-primary" href="https://ig.me/m/rainaaapeksha" target="_blank" rel="noopener">DM me on Instagram to book</a></div>
+    </section>
+    <section class="mantra" id="mantra">
+      <p class="eyebrow">Free for you</p>
+      <h2>A beej mantra meditation</h2>
+      <p class="small">Not sure yet? Comment or DM this word on my Instagram and I'll send you a guided beej mantra meditation:</p>
+      <p class="keyword">MANTRA</p>
+      <div class="ctas"><a class="btn btn-ghost" href="https://www.instagram.com/rainaaapeksha/" target="_blank" rel="noopener">Open @rainaaapeksha</a></div>
+    </section>
+  </div>
+
+  <footer>
+    <span>Kundalini Yoga with Apeksha Raina · Gurgaon</span>
+    <a href="https://www.instagram.com/rainaaapeksha/" target="_blank" rel="noopener">@rainaaapeksha on Instagram</a>
+  </footer>
+</div>
+</body>
+</html>
