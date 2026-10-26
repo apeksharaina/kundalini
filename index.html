@@ -100,6 +100,7 @@ h3 { font-size: 1.5rem; }
 /* Credentials strip */
 .creds { border-bottom: 1px solid var(--line); background: var(--bg-deep); }
 .creds ul { list-style: none; margin: 0 auto; padding-block: 0.75rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 2.2rem; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.creds li[aria-hidden] { display: none; }
 .creds li::before { content: "✦"; color: var(--gold); margin-right: 0.7rem; font-size: 0.6rem; vertical-align: 0.15em; }
 
 /* Two-column feature */
@@ -185,15 +186,34 @@ footer a:hover { color: var(--gold); }
   .menus, .energy { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
-  .hero { grid-template-columns: 1fr; padding-top: 1.75rem; }
-  .hero .arch-frame { width: 11rem; order: -1; }
-  .feature { grid-template-columns: 1fr; }
+  /* Phones: one centred column */
+  .hero { grid-template-columns: 1fr; padding-top: 1.75rem; text-align: center; }
+  .hero .arch-frame { width: 11rem; order: -1; justify-self: center; }
+  .hero .lede { margin-inline: auto; }
+  .ctas { justify-content: center; }
+  .feature { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .feature .media { width: 100%; max-width: 15rem; }
   .feature .media img, .feature .media video { aspect-ratio: 1 / 1; }
-  .steps { grid-template-columns: 1fr; gap: 0.6rem; }
-  .steps li { display: grid; grid-template-columns: 2.2rem 1fr; column-gap: 0.4rem; }
-  .steps li::before { grid-row: span 2; }
+  .chips { justify-content: center; }
+  .steps { grid-template-columns: 1fr; gap: 0.9rem; }
+  .steps li { border-top: 0; padding-top: 0; }
+  .steps li::before { font-size: 1.3rem; }
+  .menu { text-align: left; }
   .brand { font-size: 1.05rem; letter-spacing: 0.1em; }
+
+  /* Certifications: a single line that glides sideways */
+  .creds { overflow: hidden; }
+  .creds ul { flex-wrap: nowrap; justify-content: flex-start; width: max-content; max-width: none; gap: 0 2rem; padding-inline: 0 2rem; margin: 0; }
+  .creds li { white-space: nowrap; }
+}
+@media (max-width: 720px) and (prefers-reduced-motion: no-preference) {
+  .creds li[aria-hidden] { display: list-item; }
+  .creds ul { animation: ticker 22s linear infinite; }
+  @keyframes ticker { to { transform: translateX(-50%); } }
+}
+@media (max-width: 720px) and (prefers-reduced-motion: reduce) {
+  .creds { overflow-x: auto; }
+  .creds li[aria-hidden] { display: none; }
 }
 </style>
 </head>
@@ -409,6 +429,14 @@ footer a:hover { color: var(--gold); }
 <script>
 (function () {
   document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Repeat the certifications once so the phone ticker loops without a gap.
+  var credList = document.querySelector(".creds ul");
+  Array.prototype.slice.call(credList.children).forEach(function (li) {
+    var copy = li.cloneNode(true);
+    copy.setAttribute("aria-hidden", "true");
+    credList.appendChild(copy);
+  });
 
   // Currency: remembered choice, else a guess from the visitor's time zone.
   var key = "ar-currency", cur;
