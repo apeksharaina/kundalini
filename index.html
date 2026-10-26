@@ -106,10 +106,15 @@ h3 { font-size: 1.5rem; }
 /* Two-column feature */
 .feature { display: grid; grid-template-columns: 18rem minmax(0, 1fr); gap: clamp(2rem, 6vw, 4.5rem); align-items: center; }
 .feature .media img, .feature .media video { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
-/* The meditation film melts into the emerald around it instead of sitting in a hard frame */
-.media.film { position: relative; }
-.media.film video { -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent 100%); mask-image: radial-gradient(closest-side, #000 55%, transparent 100%); }
-.media.film::after { content: ""; position: absolute; inset: 0; background: radial-gradient(closest-side, transparent 50%, var(--bg) 100%); pointer-events: none; }
+/* Full-width meditation film with a quiet line over it */
+.film { position: relative; height: clamp(22rem, 60vw, 38rem); overflow: hidden; background: var(--bg-deep); }
+.film video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.film::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 38, 32, 0.15), rgba(14, 38, 32, 0.75)); }
+.film blockquote { position: absolute; z-index: 1; left: 0; right: 0; bottom: clamp(2rem, 6vw, 4rem); margin: 0; text-align: center; padding-inline: 1.5rem; }
+.film blockquote p { font-family: var(--display); font-style: italic; font-size: clamp(1.7rem, 4vw, 2.8rem); line-height: 1.2; color: var(--ivory); }
+.film blockquote span { display: block; margin-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+.intro { max-width: 46rem; margin-inline: auto; text-align: center; display: grid; gap: 1.1rem; justify-items: center; }
+.intro .chips { justify-content: center; }
 .feature .copy { display: grid; gap: 1.1rem; }
 .chips { list-style: none; margin: 0.2rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .chips li { border: 1px solid var(--line); padding: 0.35rem 0.85rem; font-size: 0.8rem; letter-spacing: 0.06em; }
@@ -261,25 +266,25 @@ footer a:hover { color: var(--gold); }
   </div>
 </header>
 
+<section class="film" aria-label="Meditation by the Ganga in Rishikesh">
+  <video autoplay muted loop playsinline preload="metadata" poster="images/meditation-poster.jpg" aria-label="Apeksha meditating by the Ganga in Rishikesh">
+    <source src="images/meditation.mp4" type="video/mp4">
+  </video>
+  <blockquote><p>Stillness is the real luxury.</p><span>On the ghats of the Ganga, Rishikesh</span></blockquote>
+</section>
+
 <section class="section wrap" id="kundalini" aria-labelledby="k-title">
-  <div class="feature reveal">
-    <div class="media film">
-      <video autoplay muted loop playsinline preload="metadata" poster="images/meditation-poster.jpg" aria-label="Apeksha meditating by the Ganga in Rishikesh">
-        <source src="images/meditation.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="copy">
-      <p class="eyebrow">What is Kundalini Yoga</p>
-      <h2 id="k-title">Yoga for your <em>energy</em>, not just your body</h2>
-      <p class="muted">Kundalini is the energy resting at the base of the spine: your untapped potential. Kundalini Yoga awakens it through kriyas, set sequences of posture, breath, mantra and stillness, for a calmer nervous system, a clearer mind and a deeper connection to yourself. No flexibility or experience needed.</p>
-      <ol class="chips" aria-label="What happens in a session">
-        <li><span>01</span>Centering</li>
-        <li><span>02</span>Kriya</li>
-        <li><span>03</span>Meditation</li>
-        <li><span>04</span>Mantra</li>
-        <li><span>05</span>Relaxation</li>
-      </ol>
-    </div>
+  <div class="intro reveal">
+    <p class="eyebrow">What is Kundalini Yoga</p>
+    <h2 id="k-title">Yoga for your <em>energy</em>, not just your body</h2>
+    <p class="muted">Kundalini is the energy resting at the base of the spine: your untapped potential. Kundalini Yoga awakens it through kriyas, set sequences of posture, breath, mantra and stillness, for a calmer nervous system, a clearer mind and a deeper connection to yourself. No flexibility or experience needed.</p>
+    <ol class="chips" aria-label="What happens in a session">
+      <li><span>01</span>Centering</li>
+      <li><span>02</span>Kriya</li>
+      <li><span>03</span>Meditation</li>
+      <li><span>04</span>Mantra</li>
+      <li><span>05</span>Relaxation</li>
+    </ol>
   </div>
 </section>
 
