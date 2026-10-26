@@ -131,9 +131,13 @@ h3 { font-size: 1.5rem; }
 .menu h3 { font-size: 1.75rem; }
 .menu .mode { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.6rem; }
 .items { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-.items li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.15rem 1rem; align-items: baseline; padding-block: 0.95rem; border-bottom: 1px solid var(--line); }
+.items li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.15rem 1rem; align-items: start; padding-block: 0.95rem; border-bottom: 1px solid var(--line); }
 .items b { font-family: var(--display); font-weight: 400; font-size: 1.3rem; }
-.items .qty { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-left: 0.5rem; vertical-align: 0.25em; white-space: nowrap; }
+.items .price { display: grid; justify-items: end; text-align: right; gap: 0.15rem; }
+.items .now { white-space: nowrap; }
+.items .was { font-family: var(--display); font-size: 1.05rem; color: var(--muted); text-decoration-thickness: 1px; margin-right: 0.35rem; }
+.items .qty { display: block; font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.items .sig { font-style: normal; font-family: var(--body); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-gold); background: var(--gold); padding: 0.15rem 0.5rem; margin-left: 0.5rem; vertical-align: 0.3em; }
 .items .amt { font-family: var(--display); font-size: 1.35rem; color: var(--gold); white-space: nowrap; font-variant-numeric: lining-nums; }
 .items p { grid-column: 1 / -1; font-size: 0.88rem; color: var(--muted); }
 .menu .foot { font-size: 0.82rem; color: var(--muted); margin-top: 0.8rem; }
@@ -322,9 +326,9 @@ footer a:hover { color: var(--gold); }
         <h3>Kundalini Yoga</h3>
         <p class="mode" data-mode-inr="In your home in Delhi NCR, or live online" data-mode-intl="Live online, one to one">In your home in Delhi NCR, or live online</p>
         <ul class="items">
-          <li><b>Private session <span class="qty">1 session</span></b><span class="amt" data-inr="₹2,500" data-usd="$110" data-gbp="£85" data-eur="€100">₹2,500</span><p>60 minutes, shaped around how you feel that day.</p></li>
-          <li><b>The Seven <span class="qty">7 sessions</span></b><span class="amt" data-inr="₹14,000" data-usd="$700" data-gbp="£550" data-eur="€650">₹14,000</span><p>Build a steady rhythm. Ideal for stress and sleep.</p></li>
-          <li><b>The Twenty-One <span class="qty">21 sessions · Signature</span></b><span class="amt" data-inr="₹35,000" data-usd="$1,950" data-gbp="£1,500" data-eur="€1,800">₹35,000</span><p>The traditional span for a new pattern to take root.</p></li>
+          <li><b>Private session</b><span class="price"><span class="now"><span class="amt" data-inr="₹2,500" data-usd="$110" data-gbp="£85" data-eur="€100">₹2,500</span></span><small class="qty">1 session</small></span><p>60 minutes, shaped around how you feel that day.</p></li>
+          <li><b>The Seven</b><span class="price"><span class="now"><span class="amt" data-inr="₹14,000" data-usd="$700" data-gbp="£550" data-eur="€650">₹14,000</span></span><small class="qty">7 sessions</small></span><p>Build a steady rhythm. Ideal for stress and sleep.</p></li>
+          <li><b>The Twenty-One <em class="sig">Signature</em></b><span class="price"><span class="now"><span class="amt" data-inr="₹35,000" data-usd="$1,950" data-gbp="£1,500" data-eur="€1,800">₹35,000</span></span><small class="qty">21 sessions</small></span><p>The traditional span for a new pattern to take root.</p></li>
         </ul>
         <p class="foot gold">✦ Every programme includes a free Pranic Healing session</p>
         <p class="foot">Couples, families, private groups, hotels, clubs and teams on request.</p>
@@ -333,9 +337,9 @@ footer a:hover { color: var(--gold); }
         <h3>Pranic Healing</h3>
         <p class="mode">In person in Delhi NCR, or distance healing worldwide</p>
         <ul class="items">
-          <li><b>Space cleansing <span class="qty">3 sessions</span></b><span class="amt" data-inr="₹5,000" data-usd="$150" data-gbp="£115" data-eur="€135">₹5,000</span><p>My specialisation. For homes, new homes, offices and studios.</p></li>
-          <li><b>Karmic cleansing <span class="qty">2 sessions</span></b><span class="amt" data-inr="₹2,500" data-usd="$95" data-gbp="£75" data-eur="€85">₹2,500</span><p>My specialisation. Release repeating patterns in love, money or work.</p></li>
-          <li><b>Healing <span class="qty">2 sessions</span></b><span class="amt" data-inr="₹1,500" data-usd="$60" data-gbp="£45" data-eur="€55">₹1,500</span><p>For stress, anxiety, low energy, sleep and emotional balance.</p></li>
+          <li><b>Space cleansing</b><span class="price"><span class="now"><span class="amt" data-inr="₹5,000" data-usd="$150" data-gbp="£115" data-eur="€135">₹5,000</span></span><small class="qty">3 sessions</small></span><p>My specialisation. For homes, new homes, offices and studios.</p></li>
+          <li><b>Karmic cleansing</b><span class="price"><span class="now"><span class="amt" data-inr="₹2,500" data-usd="$95" data-gbp="£75" data-eur="€85">₹2,500</span></span><small class="qty">2 sessions</small></span><p>My specialisation. Release repeating patterns in love, money or work.</p></li>
+          <li><b>Healing</b><span class="price"><span class="now"><s class="was" data-inr="₹1,800" data-usd="$50" data-gbp="£40" data-eur="€44">₹1,800</s> <span class="amt" data-inr="₹900" data-usd="$25" data-gbp="£20" data-eur="€22">₹900</span></span><small class="qty">1 session</small></span><p>For stress, anxiety, low energy, sleep and emotional balance.</p></li>
         </ul>
         <p class="foot">Pranic Healing complements medical care and does not replace it.</p>
       </article>
