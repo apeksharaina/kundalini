@@ -234,8 +234,8 @@ footer a:hover { color: var(--gold); }
     <a class="brand" href="#top">Apeksha Raina</a>
     <ul>
       <li><a href="#kundalini">Kundalini</a></li>
-      <li><a href="#offerings">Offerings</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#offerings">Offerings</a></li>
       <li><a href="#energy-body">Energy body</a></li>
     </ul>
     <a class="btn btn-gold" href="#offerings">Book</a>
@@ -289,7 +289,23 @@ footer a:hover { color: var(--gold); }
   </div>
 </section>
 
-<section class="section bg-deep" id="offerings" aria-labelledby="o-title">
+<section class="section bg-deep" id="about" aria-labelledby="a-title">
+  <div class="wrap feature reveal">
+    <div class="media"><img src="images/apeksha-closeup.jpg" alt="Close portrait of Apeksha Raina" width="600" height="900" loading="lazy" style="object-position: 50% 35%;"></div>
+    <div class="copy">
+      <p class="eyebrow">About Apeksha</p>
+      <h2 id="a-title">I know what a <em>full life</em> feels like</h2>
+      <p class="muted">Yoga found me on a solo trip to Rishikesh and never let go. Through a demanding corporate career, Kundalini became my daily reset. Today I bring it to people with busy, high-pressure lives: one to one, discreetly, at your pace.</p>
+      <ol class="steps" aria-label="How to begin">
+        <li><b>Reach out</b>Message me or book a free call</li>
+        <li><b>We talk</b>I suggest the right plan for you</li>
+        <li><b>We begin</b>Pay after we agree, then start</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="offerings" aria-labelledby="o-title">
   <div class="wrap">
     <div class="head center reveal">
       <p class="eyebrow">Private sessions</p>
@@ -328,46 +344,21 @@ footer a:hover { color: var(--gold); }
   </div>
 </section>
 
-<section class="section wrap" id="about" aria-labelledby="a-title">
-  <div class="feature reveal">
-    <div class="media"><img src="images/apeksha-closeup.jpg" alt="Close portrait of Apeksha Raina" width="600" height="900" loading="lazy" style="object-position: 50% 35%;"></div>
-    <div class="copy">
-      <p class="eyebrow">About Apeksha</p>
-      <h2 id="a-title">I know what a <em>full life</em> feels like</h2>
-      <p class="muted">Yoga found me on a solo trip to Rishikesh and never let go. Through a demanding corporate career, Kundalini became my daily reset. Today I bring it to people with busy, high-pressure lives: one to one, discreetly, at your pace.</p>
-      <ol class="steps" aria-label="How to begin">
-        <li><b>Reach out</b>Message me or book a free call</li>
-        <li><b>We talk</b>I suggest the right plan for you</li>
-        <li><b>We begin</b>Pay after we agree, then start</li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section class="section bg-deep" id="faq" aria-labelledby="f-title">
-  <div class="wrap">
-    <div class="head center reveal">
-      <p class="eyebrow">Questions</p>
-      <h2 id="f-title">Good to <em>know</em></h2>
-    </div>
-    <div class="faq reveal">
-      <details><summary>What do I need at home?</summary><p>A quiet space about the size of a yoga mat, comfortable clothes and a light stomach. I'll guide you on everything else.</p></details>
-      <details><summary>How do online sessions work?</summary><p>Sessions run live over video call at a time that suits your time zone, with the same personal attention as in person.</p></details>
-      <details><summary>Does distance Pranic Healing really work?</summary><p>Yes. Pranic Healing works with your energy field, not physical touch, so a distance session is as effective as one in person. You relax at home while I work.</p></details>
-      <details><summary>Do you work with hotels, clubs and companies?</summary><p>Yes. Guest and member sessions, small group classes, retreats and team workshops. Message me to discuss what you have in mind.</p></details>
-      <details><summary>Is everything kept confidential?</summary><p>Always. What you share in our sessions stays between us.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="section wrap" id="energy-body" aria-labelledby="e-title">
-  <div class="energy reveal">
+<section class="section bg-deep" id="energy-body" aria-labelledby="e-title">
+  <div class="wrap energy reveal">
     <svg viewBox="0 0 420 560" role="img" aria-labelledby="dx-title dx-desc">
       <title id="dx-title">The energy body: seven chakras along the spine, joined by the Ida, Pingala and Sushumna nadis</title>
       <desc id="dx-desc">A vertical central channel, Sushumna, runs from the root chakra at the base of the spine to the crown. Ida and Pingala spiral around it, crossing at each chakra and meeting at the third eye.</desc>
       <ellipse cx="150" cy="290" rx="122" ry="232" fill="none" stroke="#c9a961" stroke-opacity="0.18"/>
       <ellipse cx="150" cy="290" rx="96" ry="200" fill="#143029" fill-opacity="0.55" stroke="#c9a961" stroke-opacity="0.12"/>
-      <line class="sushumna" x1="150" y1="488" x2="150" y2="98" stroke="#9d86ff" stroke-width="2.8"/>
+      <defs>
+        <filter id="red-glow" filterUnits="userSpaceOnUse" x="110" y="70" width="80" height="450">
+          <feGaussianBlur stdDeviation="3.5" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <line x1="150" y1="488" x2="150" y2="98" stroke="#ff2a2a" stroke-opacity="0.35" stroke-width="7" filter="url(#red-glow)"/>
+      <line class="sushumna" x1="150" y1="488" x2="150" y2="98" stroke="#ff3b30" stroke-width="2.8" filter="url(#red-glow)"/>
       <path d="M150 470 C89 455 89 425 150 410 C205 395 205 365 150 350 C102 335 102 305 150 290 C191 275 191 245 150 230 C115 215 115 185 150 170" fill="none" stroke="#c9ced6" stroke-width="1.5"/>
       <path d="M150 470 C211 455 211 425 150 410 C95 395 95 365 150 350 C198 335 198 305 150 290 C109 275 109 245 150 230 C185 215 185 185 150 170" fill="none" stroke="#d4af5f" stroke-width="1.5"/>
       <g fill="none" stroke="#c9a961" stroke-opacity="0.55">
@@ -405,10 +396,26 @@ footer a:hover { color: var(--gold); }
       <h2 id="e-title">Where Kundalini <em>rises</em></h2>
       <p class="muted">Yogic tradition describes 72,000 nadis, or energy channels, flowing through the body. Three matter most. Along the central one sit the seven chakras, from the root at the base of the spine to the crown. Kundalini Yoga and Pranic Healing work to clear and balance this system so energy can move freely.</p>
       <ul class="nadis">
-        <li><span class="swatch" style="background:#9d86ff" aria-hidden="true"></span><div><b>Sushumna</b><span class="t">The violet central channel. The path Kundalini rises along.</span></div></li>
+        <li><span class="swatch" style="background:#ff3b30; box-shadow: 0 0 8px 1px rgba(255, 59, 48, 0.8)" aria-hidden="true"></span><div><b>Sushumna</b><span class="t">The glowing red central channel. The path Kundalini rises along.</span></div></li>
         <li><span class="swatch" style="background:#c9ced6" aria-hidden="true"></span><div><b>Ida</b><span class="t">The silver, lunar, cooling channel. Calm, intuition, rest.</span></div></li>
         <li><span class="swatch" style="background:#d4af5f" aria-hidden="true"></span><div><b>Pingala</b><span class="t">The golden, solar, warming channel. Drive, focus, vitality.</span></div></li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="f-title">
+  <div class="wrap">
+    <div class="head center reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 id="f-title">Good to <em>know</em></h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>What do I need at home?</summary><p>A quiet space about the size of a yoga mat, comfortable clothes and a light stomach. I'll guide you on everything else.</p></details>
+      <details><summary>How do online sessions work?</summary><p>Sessions run live over video call at a time that suits your time zone, with the same personal attention as in person.</p></details>
+      <details><summary>Does distance Pranic Healing really work?</summary><p>Yes. Pranic Healing works with your energy field, not physical touch, so a distance session is as effective as one in person. You relax at home while I work.</p></details>
+      <details><summary>Do you work with hotels, clubs and companies?</summary><p>Yes. Guest and member sessions, small group classes, retreats and team workshops. Message me to discuss what you have in mind.</p></details>
+      <details><summary>Is everything kept confidential?</summary><p>Always. What you share in our sessions stays between us.</p></details>
     </div>
   </div>
 </section>
