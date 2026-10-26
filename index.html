@@ -131,15 +131,19 @@ h3 { font-size: 1.5rem; }
 .menu h3 { font-size: 1.75rem; }
 .menu .mode { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.6rem; }
 .items { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-.items li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.15rem 1rem; align-items: start; padding-block: 0.95rem; border-bottom: 1px solid var(--line); }
+.items li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.1rem 1.25rem; align-items: baseline; padding-block: 0.85rem; border-bottom: 1px solid var(--line); }
 .items b { font-family: var(--display); font-weight: 400; font-size: 1.3rem; }
-.items .price { display: grid; justify-items: end; text-align: right; gap: 0.15rem; }
+.items .price { display: contents; }
+.items b { grid-column: 1; grid-row: 1; }
+.items .now { grid-column: 2; grid-row: 1; text-align: right; }
+.items .qty { grid-column: 2; grid-row: 2; text-align: right; }
+.items li p { grid-column: 1; grid-row: 2; }
 .items .now { white-space: nowrap; }
 .items .was { font-family: var(--display); font-size: 1.05rem; color: var(--muted); text-decoration-thickness: 1px; margin-right: 0.35rem; }
 .items .qty { display: block; font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .items .sig { font-style: normal; font-family: var(--body); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-gold); background: var(--gold); padding: 0.15rem 0.5rem; margin-left: 0.5rem; vertical-align: 0.3em; }
 .items .amt { font-family: var(--display); font-size: 1.35rem; color: var(--gold); white-space: nowrap; font-variant-numeric: lining-nums; }
-.items p { grid-column: 1 / -1; font-size: 0.88rem; color: var(--muted); }
+.items p { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
 .menu .foot { font-size: 0.82rem; color: var(--muted); margin-top: 0.8rem; }
 .menu .foot.gold { color: var(--gold); font-family: var(--display); font-style: italic; font-size: 1.1rem; }
 .note { margin-top: 1.4rem; text-align: center; font-size: 0.8rem; color: var(--muted); }
